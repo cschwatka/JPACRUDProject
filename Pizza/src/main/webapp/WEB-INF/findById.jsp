@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Find Pizza By ID</title>
+</head>
+<body>
+
+
+		<h1>Find Pizza By ID</h1>
+		<form action="findById.do" method="GET">
+		<input type="text" name="id" placeholder="Please Enter ID" /> <input type="submit"
+					value="Get Pizza Data" />
+		</form>
+
+</body>
+</html>
