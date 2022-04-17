@@ -13,7 +13,7 @@
 	<% String passedId = request.getParameter("id");
 	%>
 	<%
-	String passedTitle = request.getParameter("title");
+	String passedName = request.getParameter("name");
 	%>
 	<%
 	String passedDescription = request.getParameter("description");
@@ -43,7 +43,7 @@
 				<label for="id"></label> <input type="hidden" name="id" value="<%=passedId%>"> 
 				
 				
-				<label for="title">Title:</label> <input type="text" name="title" value="<%=passedTitle%>"><br> 
+				<label for="title">Name:</label> <input type="text" name="name" value="<%=passedName%>"><br> 
 				<label for="description">Description: </label> <input type="text" name="description" value="<%=passedDescription%>"> <br>
 				<label for="size">Size: </label> <input type="text" name="size" value="<%=passedSize%>"> <br>
 				

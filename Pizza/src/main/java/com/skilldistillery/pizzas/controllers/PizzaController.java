@@ -31,14 +31,21 @@ public class PizzaController {
 	   return "home"; // using a ViewResolver.
 	}
 	
+//	@RequestMapping(path = "create.do", method = RequestMethod.POST)
+//	public ModelAndView create(Pizza pizza) {
+//		ModelAndView mv = new ModelAndView();
+//		Pizza newPizza = dao.create(pizza);
+//		mv.addObject("pizza", newPizza);
+//		mv.setViewName("result");
+//		return mv;
+//
+//	}
+	
 	@RequestMapping(path = "create.do", method = RequestMethod.POST)
-	public ModelAndView create(Pizza pizza) {
-		ModelAndView mv = new ModelAndView();
+	public String create(Pizza pizza, Model model) {
 		Pizza newPizza = dao.create(pizza);
-		mv.addObject("pizza", newPizza);
-		mv.setViewName("WEB-INF/result.jsp");
-		return mv;
-
+		model.addAttribute("pizza", newPizza);
+		return "pizza/result";
 	}
 	
 

@@ -32,20 +32,7 @@ public class PizzaDaoJpaImpl implements PizzaDAO {
 
 	@Override
 	public Pizza create(Pizza pizza) {
-		
-		// start the transaction
-		em.getTransaction().begin();
-
-		// write the pizza to the database
 		em.persist(pizza);
-		
-		// update the "local" Pizza object
-		em.flush();
-		
-		// commit the changes (actually perform the operation)
-		em.getTransaction().commit();
-
-		em.close();
 		return pizza;
 		
 	}

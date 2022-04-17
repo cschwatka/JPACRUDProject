@@ -9,16 +9,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1>Hello Pizza</h1>
 <c:choose>
-		
 		<c:when test="${!empty pizza}">
-
 			<ul id="resultList">
-				<h3>Some header</h3>
-
+				<h3>Pizza Created</h3>
+				
 				<li>Pizza ID: ${pizza.id}</li>
-				<li>Title: ${pizza.title}</li>
+				<li>Name: ${pizza.name}</li>
 				<li>Description: ${pizza.description}</li>
 				<li>Size: ${pizza.size}</li>
 				<li>Crust: ${pizza.crust}</li>
@@ -26,11 +24,11 @@
 				<li>Meat: ${pizza.meat} </li>
 				<li>Vegetable: ${pizza.vegetable} </li>
 				
-				<%-- HIDDEN FIELDS PASSING DATA --%>
+				<!-- HIDDEN FIELDS PASSING DATA -->
 				
 				<form action="update.jsp" method="GET">
 					<input type="hidden" name="id" value="${pizza.id}" /> 
-					<input type="hidden" name="title" value="${pizza.title}" /> 
+					<input type="hidden" name="name" value="${pizza.name}" /> 
 					<input type="hidden" name="description" value="${pizza.description}" />
 					<input type="hidden" name="size" value="${pizza.size}" />
 					<input type="hidden" name="crust" value="${pizza.crust}" /> 
@@ -41,19 +39,18 @@
 				</form>
 				
 				<form action="delete.do" method="POST">
-					<input type="hidden" name="id" value="${film.id}" /> 
-					<input type="hidden" name="filmTitle" value="${film.title}" /> 
-						 <input type="submit" value="Delete Film" />
+					<input type="hidden" name="id" value="${pizza.id}" /> 
+						 <input type="submit" value="Delete Pizza" />
 				</form>
 
-				<%-- KEEP LIST FOREACH EXAMPLE 
+				<!-- KEEP LIST FOREACH EXAMPLE  
 				<li>Cast:</li>
 				<c:forEach var="a" items="${film.actors}">
 					<ul>
 						<li>${a.firstName}  ${a.lastName}</li>
 					</ul>
 				</c:forEach>
-				--%>
+				-->
 
 			</ul>
 		</c:when>

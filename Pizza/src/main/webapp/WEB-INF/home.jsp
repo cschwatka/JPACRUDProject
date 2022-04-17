@@ -13,7 +13,7 @@
 <h1>Pizza Pizza</h1>
 
 				<a href="findById.jsp">Find Pizza By ID</a>
-				<a href="create.jsp">Create a New Pizza</a>
+				<a href="create.html">Create a New Pizza</a>
 
 
 <%-- ${DEBUG} --%>
