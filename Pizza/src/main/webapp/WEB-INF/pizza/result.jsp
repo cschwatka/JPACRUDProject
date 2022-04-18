@@ -14,7 +14,6 @@
 </head>
 <body>
 
-	<h1>Hello Pizza</h1>
 	<c:if test="${pageContext.request.method=='POST' }">
 		<p>${pizza.name} ID: (${pizza.id}) created or updated.</p>
 	</c:if>

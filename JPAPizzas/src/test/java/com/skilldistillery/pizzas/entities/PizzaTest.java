@@ -43,7 +43,9 @@ class PizzaTest {
 	@Test
 	void test_Pizza_entity_mapping() {
 		assertNotNull(pizza);
-		assertEquals("Pepperoni", pizza.getName());
+		assertEquals("Pepperoni Pizza", pizza.getName());
+		assertEquals("Large", pizza.getSize());
+		assertEquals("Normal Cheese", pizza.getCheese());
 		
 	}
 
