@@ -10,16 +10,13 @@
 <title>Pizza Application</title>
 </head>
 <body>
-<h1>Pizza Pizza</h1>
-
-				<a href="findById.jsp">Find Pizza By ID</a>
-				<a href="create.html">Create a New Pizza</a>
-
-
-<%-- ${DEBUG} --%>
-${pizzas}
-
-
+	<h1>Pizza Pizza</h1>
+		<ul>
+		
+		<li><a href="listAll.do">List all Pizzas</a></li>
+		<li><a href="findById.html">Find Pizza By ID</a></li>
+		<li><a href="create.html">Create a New Pizza</a></li>
+		</ul>
 
 </body>
 </html>

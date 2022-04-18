@@ -39,14 +39,28 @@ public class PizzaDaoJpaImpl implements PizzaDAO {
 
 	@Override
 	public Pizza update(int id, Pizza pizza) {
-		// TODO Auto-generated method stub
-		return null;
+		Pizza managed = em.find(Pizza.class, id); //refactor with  merge if have time
+		managed.setName(pizza.getName());
+		managed.setDescription(pizza.getDescription());
+		managed.setSize(pizza.getSize());
+		managed.setCrust(pizza.getCrust());
+		managed.setCheese(pizza.getCheese());
+		managed.setMeat(pizza.getMeat());
+		managed.setVegetable(pizza.getVegetable());
+		return managed;
 	}
 
 	@Override
 	public boolean destroy(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean successDestroy = false;
+		Pizza p = em.find(Pizza.class, id);
+		
+		if (p != null) {
+			em.remove(p); // performs the delete on the managed entity
+			successDestroy = !em.contains(p); // confirm destroyed
+		}
+		return successDestroy;
+
 	}
 
 }
