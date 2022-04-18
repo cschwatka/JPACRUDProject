@@ -1,14 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:include page="../nav.jsp"/>
 <!DOCTYPE html>
+
 <html>
+
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Results</title>
+
 </head>
 <body>
+
 	<h1>Hello Pizza</h1>
 	<c:if test="${pageContext.request.method=='POST' }">
 		<p>${pizza.name} ID: (${pizza.id}) created or updated.</p>
@@ -26,17 +31,14 @@
 				<li>Meat: ${pizza.meat}</li>
 				<li>Vegetable: ${pizza.vegetable}</li>
 			</ul>
-
-			<form action="goToUpdate.do" method="POST">
-				<input type="hidden" name="pizzaId" value="${pizza.id}" /> 
-				<input type="submit" value="Edit Pizza" />
+				<form action="goToUpdate.do" method="POST">
+					<input type="hidden" name="pizzaId" value="${pizza.id}" /> 
+					<input type="submit" value="Edit Pizza" />
+				</form>
+				<form action="destroy.do" method="POST">
+					<input type="hidden" name="id" value="${pizza.id}" /> 
+					<input type="submit" value="Delete Pizza" />
 			</form>
-			
-			<form action="destroy.do" method="POST">
-				<input type="hidden" name="id" value="${pizza.id}" /> 
-				<input type="submit" value="Delete Pizza" />
-			</form>
-
 		</c:when>
 		<c:when test="${!empty pizzas}">
 			<c:forEach items="${pizzas}" var ="p">
